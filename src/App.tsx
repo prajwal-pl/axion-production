@@ -1,11 +1,15 @@
-import { Button } from "./components/ui/button";
+import { BrowserRouter, Routes, Route } from "react-router";
+import { SignUp } from "./pages/sign-up";
+import { SignIn } from "./pages/sign-in";
 
 function App() {
   return (
-    <div>
-      <h1 className="text-green-500 font-bold">Hello World</h1>
-      <Button>Click Me</Button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/sign-in" element={<SignIn />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
