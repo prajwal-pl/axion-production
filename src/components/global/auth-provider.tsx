@@ -24,19 +24,20 @@ const AuthProvider = ({ children }: propTypes) => {
       </div>
       <div className="hidden lg:flex flex-1 w-full max-h-full max-w-4000px overflow-hidden relative bg-cream  flex-col pt-10 pl-24 gap-3">
         <h2 className="text-gravel md:text-4xl font-bold">
-          Hi, {"I’m"} your AI powered sales assistant, Corinna!
+          Meet Axion, your AI powered project assistant
         </h2>
         <p className="text-iridium md:text-sm mb-10">
-          Corinna is capable of capturing lead information without a form...{" "}
+          Axion is capable of building your projects from scratch, with just a
+          prompt.
           <br />
-          something never done before 😉
+          Making your project management experience seamless and efficient.
         </p>
         <img
           src="/images/app-ui.png"
           alt="app image"
           loading="lazy"
           sizes="30"
-          className="absolute shrink-0 !w-[1600px] top-48"
+          className="absolute shrink-0 !w-[1600px] top-48 border-4 border-cream rounded-xl"
           width={0}
           height={0}
         />
