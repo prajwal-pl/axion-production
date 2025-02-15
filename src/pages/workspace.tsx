@@ -1,3 +1,6 @@
+import { useUser } from "@clerk/clerk-react";
+
 export function Workspace() {
-  return <div>Workspace</div>;
+  const { user, isSignedIn } = useUser();
+  return <div>{isSignedIn ? user?.username : "Not signed in"}</div>;
 }

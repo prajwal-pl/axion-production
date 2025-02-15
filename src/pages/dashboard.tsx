@@ -1,3 +1,9 @@
+import { ModeToggle } from "@/components/ui/mode-toggle";
+
 export function Dashboard() {
-  return <div>Dashboard</div>;
+  return (
+    <div>
+      <ModeToggle />
+    </div>
+  );
 }

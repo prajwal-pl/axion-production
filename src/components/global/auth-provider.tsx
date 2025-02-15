@@ -4,10 +4,7 @@ type propTypes = {
 
 const AuthProvider = ({ children }: propTypes) => {
   return (
-    <div
-      className="h-screen flex w-full justify-center"
-      suppressHydrationWarning
-    >
+    <div className="h-screen flex w-full justify-center">
       <div className="w-[600px] ld:w-full flex flex-col items-start p-6">
         <img
           src="/images/logo.png"
@@ -22,7 +19,7 @@ const AuthProvider = ({ children }: propTypes) => {
         />
         {children}
       </div>
-      <div className="hidden lg:flex flex-1 w-full max-h-full max-w-4000px overflow-hidden relative bg-cream  flex-col pt-10 pl-24 gap-3">
+      <div className="hidden lg:flex flex-1 w-full max-h-full max-w-4000px overflow-hidden relative bg-cream flex-col pt-10 pl-24 gap-3">
         <h2 className="text-gravel md:text-4xl font-bold">
           Meet Axion, your AI powered project assistant
         </h2>
