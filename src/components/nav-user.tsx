@@ -1,5 +1,3 @@
-"use client";
-
 import {
   BadgeCheck,
   Bell,
@@ -25,7 +23,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
-import { useUser } from "@clerk/clerk-react";
+import { useAuth, useUser } from "@clerk/clerk-react";
 
 export function NavUser({
   user,
@@ -38,6 +36,7 @@ export function NavUser({
 }) {
   const { isMobile } = useSidebar();
   const { user: userData } = useUser();
+  const { signOut } = useAuth();
 
   return (
     <SidebarMenu>
@@ -109,7 +108,14 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
+            <DropdownMenuItem
+              onClick={() =>
+                signOut({
+                  redirectUrl: "/sign-in",
+                })
+              }
+              className="cursor-pointer"
+            >
               <LogOut />
               Log out
             </DropdownMenuItem>
