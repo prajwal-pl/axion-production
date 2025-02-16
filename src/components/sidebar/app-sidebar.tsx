@@ -1,16 +1,11 @@
 import * as React from "react";
 import {
   AudioWaveform,
-  BookOpen,
-  Bot,
   Command,
   FolderGit2,
-  Frame,
   GalleryVerticalEnd,
   History,
   LayoutDashboard,
-  Map,
-  PieChart,
   Settings2,
   SquareTerminal,
   Star,
@@ -18,22 +13,18 @@ import {
   Wallet,
 } from "lucide-react";
 
-import { NavMain } from "@/components/nav-main";
-import { NavProjects } from "@/components/nav-projects";
-import { NavUser } from "@/components/nav-user";
-import { TeamSwitcher } from "@/components/team-switcher";
+import { NavMain } from "@/components/sidebar/nav-main";
+import { NavProjects } from "@/components/sidebar/nav-projects";
+import { NavUser } from "@/components/sidebar/nav-user";
+import { TeamSwitcher } from "@/components/sidebar/team-switcher";
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-  SidebarTrigger,
 } from "@/components/ui/sidebar";
 
-const pathname = window.location.pathname;
-
-// This is sample data.
 const data = {
   user: {
     name: "shadcn",
@@ -62,47 +53,16 @@ const data = {
       title: "Dashboard",
       url: "/dashboard",
       icon: LayoutDashboard,
-      isActive: pathname === "/dashboard",
     },
     {
       title: "Workspace",
       url: "/workspace",
       icon: SquareTerminal,
-      isActive: pathname === "/workspace",
-      // items: [
-      //   {
-      //     title: "Teams",
-      //     url: "/workspace",
-      //   },
-      //   {
-      //     title: "Favorites",
-      //     url: "/workspace/favorites",
-      //   },
-      //   {
-      //     title: "History",
-      //     url: "/workspace/history",
-      //   },
-      // ],
     },
     {
       title: "Settings",
-      url: "#",
+      url: "/settings",
       icon: Settings2,
-      isActive: pathname === "/settings",
-      // items: [
-      //   {
-      //     title: "General",
-      //     url: "settings/general",
-      //   },
-      //   {
-      //     title: "Team",
-      //     url: "settings/team",
-      //   },
-      //   {
-      //     title: "Billing",
-      //     url: "settings/billing",
-      //   },
-      // ],
     },
     {
       title: "History",
@@ -118,17 +78,17 @@ const data = {
   projects: [
     {
       name: "Community",
-      url: "/projects/community",
+      url: "/community",
       icon: Users,
     },
     {
       name: "Favorites",
-      url: "/projects/favorites",
+      url: "/favorites",
       icon: Star,
     },
     {
       name: "Your Projects",
-      url: "/projects/your-projects",
+      url: "/your-projects",
       icon: FolderGit2,
     },
   ],

@@ -1,9 +1,13 @@
-import { ModeToggle } from "@/components/ui/mode-toggle";
+import Header from "@/components/global/header";
+import { metadata } from "@/lib/page-metadata";
 
 export function Dashboard() {
   return (
     <div>
-      <ModeToggle />
+      <Header
+        title={metadata.dashboard.title}
+        description={metadata.dashboard.description}
+      />
     </div>
   );
 }

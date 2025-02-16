@@ -3,29 +3,27 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
-import { AppSidebar } from "../app-sidebar";
-import { Outlet, useNavigate } from "react-router";
+import { AppSidebar } from "../sidebar/app-sidebar";
+import { Outlet, useLocation, useNavigate } from "react-router";
 import { useUser } from "@clerk/clerk-react";
 import { Separator } from "../ui/separator";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "../ui/breadcrumb";
 import Navbar from "./navbar";
-type Props = {};
 
-const SidebarLayout = (props: Props) => {
+const SidebarLayout = () => {
   const { isSignedIn } = useUser();
   const navigate = useNavigate();
+  const location = useLocation();
   if (!isSignedIn) {
     navigate("/sign-in");
   }
+
+  const active =
+    location.pathname === "/editor" ||
+    location.pathname === "/community" ||
+    location.pathname === "/favorites" ||
+    location.pathname === "/your-projects";
   return (
-    <SidebarProvider>
+    <SidebarProvider defaultOpen={active}>
       <AppSidebar />
       <SidebarInset>
         <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">

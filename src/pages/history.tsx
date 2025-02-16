@@ -1,11 +1,11 @@
 import Header from "@/components/global/header";
 import { metadata } from "@/lib/page-metadata";
 
-export function Workspace() {
+export default function History() {
   return (
     <Header
-      title={metadata.workspace.title}
-      description={metadata.workspace.description}
+      title={metadata.history.title}
+      description={metadata.history.description}
     />
   );
 }

@@ -4,9 +4,7 @@ import { Bell, Book, Search } from "lucide-react";
 import { Tooltip, TooltipProvider } from "../ui/tooltip";
 import { TooltipContent, TooltipTrigger } from "@radix-ui/react-tooltip";
 
-type Props = {};
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
   const [search, setSearch] = useState("");
   return (
     <div className="flex items-center justify-between w-full top-0 sticky backdrop-blur-md ">
@@ -16,6 +14,11 @@ const Navbar = (props: Props) => {
           onChange={(e) => setSearch(e.target.value)}
           className="w-full rounded-full pl-10 pr-6"
           placeholder="Search..."
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              console.log(search);
+            }
+          }}
         />
         <Search
           size={25}
