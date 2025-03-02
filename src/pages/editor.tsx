@@ -1,4 +1,4 @@
-const Editor = () => {
+const EditorPage = () => {
   return (
     <div>
       <div>{/* Prompting with a text field here */}</div>
@@ -8,4 +8,4 @@ const Editor = () => {
   );
 };
 
-export default Editor;
+export default EditorPage;

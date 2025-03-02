@@ -1,7 +1,9 @@
+import ChatInterface from "./chat-interface";
+
 function EditorPrompt() {
   return (
     <div>
-      <div>{/* Chat Interface */}</div>
+      <ChatInterface />
       <div>{/* Text Area */}</div>
     </div>
   );
